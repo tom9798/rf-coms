@@ -1,0 +1,26 @@
+packets are sent in the following format:
+
+every packet is 1 byte long, and has the following format:
+
+00000000 - failure to recieve (timeout)
+01111111 - success
+01010101 - ready to recieve
+1XXXXXXX - length of message (in bytes) (XXXXXXX is the length in binary)
+0XXXXXXX - 1 character of message (XXXXXXX is the character in ASCII)
+
+Pin conventions:
+
+Pin 2 - RX
+Pin 5 - TX
+
+
+~~~~~ RGB Protocol
+
+24 bits are sent in the following format:
+
+   red     green    blue
+00000000 00000000 00000000 - off
+11111111 00000000 00000000 - red
+00000000 11111111 00000000 - green
+00000000 00000000 11111111 - blue
+11111111 11111111 11111111 - white
